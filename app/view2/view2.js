@@ -9,6 +9,7 @@ angular.module('myApp.view2', ['ngRoute', 'myApp.authService'])
   });
 }])
 
+  // $scope est identique à this
 .controller('View2Ctrl', ['$scope', 'authService', function( $scope, auth ) {
   var vm = $scope;
   vm.name = auth.user.username;
@@ -21,10 +22,9 @@ angular.module('myApp.view2', ['ngRoute', 'myApp.authService'])
   };
 
 
-
   vm.userList = [
-    { name: "kevin" },
-    { name:   "jean" },
-    { name:  "pierre" }
+    { name: "name1" },
+    { name: "name2" },
+    { name: "name3" }
   ]
 }]);

@@ -13,7 +13,10 @@ angular.module('myApp.view1', ['ngRoute', 'myApp.authService'])
 
   var vm = $scope;
   vm.name = auth.user.username;
+
   vm.login = function() {
     auth.login( vm.user  );
   };
+
+
 }]);
