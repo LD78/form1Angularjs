@@ -21,6 +21,7 @@ function authService($http, $location) {
         login: login,
         changeUserNameService: changeUserNameService,
         checkIdUser: checkIdUser,
+        returnLogin: returnLogin,
         user: user
     };
 
@@ -51,10 +52,14 @@ function authService($http, $location) {
 
     for (var i = 0; i < userList.length; i++) {
         if(userList[i].username == user && userList[i].password == password){
-            alert('Good Job !!!');
-            $location.path('/test');
+            service.user.username = user;
+            $location.path('/viewPostLog');
         }
     }
+  }
+
+  function returnLogin(){
+        $location.path('/viewLogin');
   }
 
     return service;

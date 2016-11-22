@@ -3,10 +3,11 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
-    'myApp.authService',
+  'myApp.authService',
   'myApp.view1',
   'myApp.view2',
-  'myApp.viewLogin'
+  'myApp.viewLogin',
+  'myApp.viewPostLog'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
@@ -16,17 +17,19 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
       '/', {
         redirectTo: '/home'
       })*/
-    .when('/yo', {
-      templateUrl: 'view1/view1.html'
+    .when('/viewPostLog', {
+      templateUrl: 'viewPostLog/viewPostLog.html'
     })
 
     .when('/test', {
       templateUrl: 'view2/view2.html'
       //controller : "ViewLoginCtrl"
-    }) /*
-    .when('/login', {
-      templateUrl: 'templates/login.html'
     })
+
+    .when('/viewLogin', {
+      templateUrl: 'viewLogin/viewLogin.html'
+    })
+  /*
     .when('/news', {
       templateUrl: 'templates/news.html'
     })
