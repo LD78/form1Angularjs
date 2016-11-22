@@ -50,8 +50,8 @@ angular.module('myApp.viewLogin', ['ngRoute', 'myApp.authService'])
     vm.nullId= function() {
 	/*vm.userName=" ";
 	vm.password=" ";*/
-	nullUser = "";
-	nullPassword = "";
+	nullUser = " ";
+	nullPassword = " ";
       auth.reset(nullUser, nullPassword);
     };
 

@@ -57,9 +57,9 @@ function authService($http, $location) {
     }
   }
 
-  function reset(user, password){
-      service.user.username = "";
-      service.user.password = "";
+  function reset(user, nullPassword){
+      service.user.username = " ";
+      service.nullPassword.password = " ";
   }
     return service;
 }
