@@ -27,10 +27,6 @@ angular.module('myApp.viewLogin', ['ngRoute', 'myApp.authService'])
       auth.loginTest( vm.user  );
     };
 
-   /* vm.changeUserName = function(user) {
-      alert(user);
-      //auth.changeUserName(user);
-    };*/
 
     vm.changeUserName = function() {
       auth.changeUserNameService(vm.user);
@@ -43,7 +39,6 @@ angular.module('myApp.viewLogin', ['ngRoute', 'myApp.authService'])
 
     vm.checkId = function() {
       auth.checkIdUser(vm.userName, vm.password);
-
     };
 
   }]);

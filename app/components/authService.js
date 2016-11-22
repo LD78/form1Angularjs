@@ -9,7 +9,7 @@ authService.$inject = ['$http', '$location'];
 function authService($http, $location) {
 
     var host = 'http://localhost:2000';
-    var user = { username : "natsu"};
+    var user = { username : "username"};
 
     var userList = [
       {"username":'guillaume',"password":"banane"},
@@ -24,24 +24,6 @@ function authService($http, $location) {
         returnLogin: returnLogin,
         user: user
     };
-
-    // user = { password, username }
-    function login(user){
-
-        service.user.username = "XOhohoh";
-
-        return $http.post(host +  '/user/login', user)
-            .then(loginComplete)
-            .catch(loginFailed);
-
-        function loginComplete(response) {
-            return response.data;
-        }
-
-        function loginFailed(err) {
-            console.log("Error :  " + err.data);
-        }
-    }
 
   function changeUserNameService(user){
 
@@ -62,5 +44,5 @@ function authService($http, $location) {
         $location.path('/viewLogin');
   }
 
-    return service;
+  return service;
 }

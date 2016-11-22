@@ -36,7 +36,18 @@ body{
 	margin: 0 auto;
 	width: 80%;
 }
-body a,form li,.submit input[type="submit"]{
+
+.buttonLog{
+	margin-bottom:25px;
+}
+
+body a,form li,.submit input[type="submit"] {
+	transition: 0.1s all;
+	-webkit-transition: 0.1s all;
+	-moz-transition: 0.1s all;
+	-o-transition: 0.1s all;
+}
+.reset input[type="reset"]{
 	transition: 0.1s all;
 	-webkit-transition: 0.1s all;
 	-moz-transition: 0.1s all;
@@ -150,6 +161,10 @@ input[type="text"], input[type="password"] {
 		border-bottom: 1px dashed #999;
 		padding: 23px 0;
 	}
+	.reset{
+		border-bottom: 1px dashed #999;
+		padding: 23px 0;
+	}
 .submit input[type="submit"]{
 	font-size: 20px;
 	font-weight: 400;
@@ -161,7 +176,23 @@ input[type="text"], input[type="password"] {
 	border: none;
 	background: #ffc50c;
 }
+
+.reset input[type="reset"]{
+	font-size: 20px;
+	font-weight: 400;
+	color: #fff;
+	cursor: pointer;
+	outline: none;
+	padding: 13px 10px;
+	width: 100%;
+	border: none;
+	background: #ffc50c;
+}
+
 input[type="submit"]:hover{
+	background:#D13E2F;
+}
+input[type="reset"]:hover{
 	background:#D13E2F;
 }
 h6 {
@@ -257,9 +288,13 @@ float: right;
 	.one-login-head h1{
 	font-size: 1.3em;
 	}
-	.submit input[type="submit"]{
+	.submit input[type="submit"] {
 	font-size: 18px;
 	padding: 13px 10px;
+	}
+	.reset input[type="reset"]{
+		font-size: 18px;
+		padding: 13px 10px;
 	}
 	form {
 	padding: 12% 4%;
