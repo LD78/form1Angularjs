@@ -45,7 +45,7 @@ angular.module('myApp.viewLogin', ['ngRoute', 'myApp.authService'])
 
     vm.checkId = function() {
       auth.checkIdUser(vm.userName, vm.password);
-
+};
 vm.nullId= function() {
 	vm.userName=" ";
 	vm.password=" ";
