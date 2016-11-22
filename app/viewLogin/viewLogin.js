@@ -18,7 +18,7 @@ angular.module('myApp.viewLogin', ['ngRoute', 'myApp.authService'])
     // Remarque toutes les variables du scope sont commune entre le html et js
     var vm = $scope;
     vm.userName;
-    vm.password = ' ';
+    vm.password;
 
     vm.nameTest = auth.user.username;
     vm.user;
@@ -44,7 +44,7 @@ angular.module('myApp.viewLogin', ['ngRoute', 'myApp.authService'])
 
 
     vm.checkId = function() {
-      auth.checkIdUser(vm.userName);
+      auth.checkIdUser(vm.userName, vm.password);
 
     };
 

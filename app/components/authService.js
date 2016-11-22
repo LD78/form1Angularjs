@@ -2,27 +2,25 @@ angular.module('myApp.authService', [])
     .factory('authService', authService);
 
 
-// attention $http pour serveur pour nous il faudra injecter un $location
-authService.$inject = ['$http'];
+// attention $http pour serveur pour nous il faudra injecter un ex: ($location.path(/home)) dans un controller
+authService.$inject = ['$http', '$location'];
 
 
-function authService($http) {
+function authService($http, $location) {
 
     var host = 'http://localhost:2000';
     var user = { username : "natsu"};
 
     var userList = [
-      { guillaume: "banane" },
-      { louis: "bonobo" },
-      { david: "ananas" },
-      { angular: "js" }
-    ]
+      {"username":'guillaume',"password":"banane"},
+      {"username":'louis',"password":"ananas"},
+      {"username":'david',"password":"mandarine"}
+    ];
 
     var service = {
         login: login,
-        //loginTest: loginTest,
-      changeUserNameService: changeUserNameService,
-      checkIdUser: checkIdUser,
+        changeUserNameService: changeUserNameService,
+        checkIdUser: checkIdUser,
         user: user
     };
 
@@ -51,26 +49,13 @@ function authService($http) {
 
   function checkIdUser(user, password){
 
-    if (service.user.username == user){
-        alert('Salut Natsu');
-/*
-      var arrayOfObjects = [
-        {"id":28,"Title":"Sweden"},
-        {"id":56,"Title":"USA"},
-        {"id":89,"Title":"England"}
-        ];
-
-      for (var i = 0; i < arrayOfObjects.length; i++) {
-        var object = arrayOfObjects[i];
-        for (var property in object) {
-          alert('item ' + i + ': ' + property + '=' + object[property]);
+    for (var i = 0; i < userList.length; i++) {
+        if(userList[i].username == user && userList[i].password == password){
+            alert('Good Job !!!');
+            $location.path('/test');
         }
-        // If property names are known beforehand, you can also just do e.g.
-        // alert(object.id + ',' + object.Title);
-      }*/
-    };
+    }
   }
 
     return service;
-
 }

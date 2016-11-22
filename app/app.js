@@ -11,5 +11,28 @@ angular.module('myApp', [
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
+  $routeProvider
+   /* .when(
+      '/', {
+        redirectTo: '/home'
+      })*/
+    .when('/yo', {
+      templateUrl: 'view1/view1.html'
+    })
+
+    .when('/test', {
+      templateUrl: 'view2/view2.html'
+      //controller : "ViewLoginCtrl"
+    }) /*
+    .when('/login', {
+      templateUrl: 'templates/login.html'
+    })
+    .when('/news', {
+      templateUrl: 'templates/news.html'
+    })
+    .when('/news/archive', {
+      templateUrl: 'templates/newsarchive.html'
+    })*/
+
   $routeProvider.otherwise({redirectTo: '/viewLogin'});
 }]);
