@@ -15,7 +15,6 @@ angular.module('myApp.viewPostLog', ['ngRoute', 'myApp.authService'])
 
   .controller('ViewPostLogCtrl', ['$scope', 'authService', function( $scope, auth ) {
     var vm = $scope;
-    //vm.user = auth.user.username;
     vm.user = auth.user.username;
 
     vm.returnLoginPage = function() {

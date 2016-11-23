@@ -18,7 +18,6 @@ function authService($http, $location) {
     ];
 
     var service = {
-        login: login,
         changeUserNameService: changeUserNameService,
         checkIdUser: checkIdUser,
         returnLogin: returnLogin,
